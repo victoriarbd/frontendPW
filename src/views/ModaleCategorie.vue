@@ -51,7 +51,7 @@ export default {
               });
           var config = {
                 method: 'put',
-                url: 'http://localhost:3300/api/categorie/'+this.idcategorie,
+                url: 'https://bookstore-depository-2.herokuapp.com/api/categorie/'+this.idcategorie,
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'

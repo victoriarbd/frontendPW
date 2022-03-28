@@ -125,7 +125,7 @@ export default {
       async submitFormCategorie(){
           var config = {
                 method: 'post',
-                url: 'http://localhost:3300/api/categorie',
+                url: 'https://bookstore-depository-2.herokuapp.com/api/categorie',
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'
@@ -151,7 +151,7 @@ export default {
 
         var config = {
           method: "delete",
-          url: "http://localhost:3300/api/categorie/" + id,
+          url: "https://bookstore-depository-2.herokuapp.com/api/categorie/" + id,
           headers: {
             Authorization: `Bearer ${this.user.token}`,
           },

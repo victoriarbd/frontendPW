@@ -158,7 +158,7 @@ export default {
 
     var config = {
       method: "post",
-      url: "http://localhost:3300/user/login",
+      url: "https://bookstore-depository-2.herokuapp.com/user/login",
       headers: {
         "Content-Type": "application/json",
       },
@@ -190,7 +190,7 @@ export default {
 
       var config = {
         method: 'post',
-        url: 'http://localhost:3300/user/signup',
+        url: 'https://bookstore-depository-2.herokuapp.com/user/signup',
         headers: { 
           'Content-Type': 'application/json'
         },

@@ -51,7 +51,7 @@ export default {
               });
           var config = {
                 method: 'put',
-                url: 'http://localhost:3300/genre/'+this.idgenre,
+                url: 'https://bookstore-depository-2.herokuapp.com/genre/'+this.idgenre,
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'

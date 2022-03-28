@@ -149,7 +149,7 @@ export default {
   methods: {
     searchCategorie(id){
       console.log(id)
-      axios.get('http://localhost:3300/livre/categorie/' + id)
+      axios.get('https://bookstore-depository-2.herokuapp.com/livre/categorie/' + id)
       .then(response => {
         this.livreCat = response.data
       })
@@ -159,7 +159,7 @@ export default {
       
     },
     searchGenre(id){
-      axios.get('http://localhost:3300/livre/genre/' + id)
+      axios.get('https://bookstore-depository-2.herokuapp.com/livre/genre/' + id)
       .then(response => {
         this.livreGenre = response.data
         console.log("le resultat",response.data)
@@ -169,7 +169,7 @@ export default {
       })
     },
     searchAuteur(id){
-      axios.get('http://localhost:3300/livre/auteur/' + id)
+      axios.get('https://bookstore-depository-2.herokuapp.com/livre/auteur/' + id)
       .then(response => {
         this.livreAuteur = response.data
         console.log("le resultat",response.data)
@@ -183,7 +183,7 @@ export default {
   /*
   mounted () {
     axios
-      .get('http://localhost:3300/livre')
+      .get('https://bookstore-depository-2.herokuapp.com/livre')
       .then(response => (this.livres = response.data))
       .catch(error => {
         console.log(error)

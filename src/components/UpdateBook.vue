@@ -157,7 +157,7 @@ export default {
     if(this.user == null){
        this.$router.push('/login')
     }
-    const result = await axios.get('http://localhost:3300/livre/'+this.$route.params.id)
+    const result = await axios.get('https://bookstore-depository-2.herokuapp.com/livre/'+this.$route.params.id)
     //console.warn(this.$route.params.id)
     //console.warn(result.data)
     this.formLivre=result.data
@@ -213,7 +213,7 @@ export default {
 
               var config = {
                 method: 'put',
-                url: 'http://localhost:3300/livre/'+this.$route.params.id,
+                url: 'https://bookstore-depository-2.herokuapp.com/livre/'+this.$route.params.id,
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'
@@ -250,7 +250,7 @@ export default {
             //console.log("nom",this.formLivre.nom)
             //console.log('id', this.$route.params.id)
             if(confirm("Do you really want to update?")){
-            const result = await axios.put("http://localhost:3300/livre/"+this.$route.params.id,
+            const result = await axios.put("https://bookstore-depository-2.herokuapp.com/livre/"+this.$route.params.id,
              headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json'},
              {
               nom: this.formLivre.nom,

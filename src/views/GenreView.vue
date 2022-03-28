@@ -115,7 +115,7 @@ export default {
       async submitFormGenre(){
           var config = {
                 method: 'post',
-                url: 'http://localhost:3300/genre',
+                url: 'https://bookstore-depository-2.herokuapp.com/genre',
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'
@@ -156,7 +156,7 @@ export default {
 
         var config = {
           method: "delete",
-          url: "http://localhost:3300/genre/" + id,
+          url: "https://bookstore-depository-2.herokuapp.com/genre/" + id,
           headers: {
             Authorization: `Bearer ${this.user.token}`,
           },

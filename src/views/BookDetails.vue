@@ -160,7 +160,7 @@ export default {
     async deleteLivre2(id) {
       if (confirm("Do you really want to delete?")) {
         await axios
-          .delete("http://localhost:3300/livre/" + id)
+          .delete("https://bookstore-depository-2.herokuapp.com/livre/" + id)
           .then(function (response) {
             console.log("Response", response);
           })
@@ -176,7 +176,7 @@ export default {
 
         var config = {
           method: "delete",
-          url: "http://localhost:3300/livre/" + id,
+          url: "https://bookstore-depository-2.herokuapp.com/livre/" + id,
           headers: {
             Authorization: `Bearer ${this.user.token}`,
           },

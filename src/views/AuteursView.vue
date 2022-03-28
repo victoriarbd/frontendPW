@@ -125,7 +125,7 @@ export default {
   },
   methods: {
     async getAuteurs(){
-      await axios.get("http://localhost:3300/auteur")
+      await axios.get("https://bookstore-depository-2.herokuapp.com/auteur")
             .then(response => {
             this.auteurs = response.data
           })
@@ -149,7 +149,7 @@ export default {
       async submitFormAuteur(){
           var config = {
                 method: 'post',
-                url: 'http://localhost:3300/auteur',
+                url: 'https://bookstore-depository-2.herokuapp.com/auteur',
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'
@@ -176,7 +176,7 @@ export default {
 
         var config = {
           method: "delete",
-          url: "http://localhost:3300/auteur/" + id,
+          url: "https://bookstore-depository-2.herokuapp.com/auteur/" + id,
           headers: {
             Authorization: `Bearer ${this.user.token}`,
           },

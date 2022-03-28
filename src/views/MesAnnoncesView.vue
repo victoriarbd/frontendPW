@@ -43,7 +43,7 @@ export default {
   /*
   mounted () {
     axios
-      .get('http://localhost:3300/livre')
+      .get('https://bookstore-depository-2.herokuapp.com/livre')
       .then(response => (this.livres = response.data))
       .catch(error => {
         console.log(error)

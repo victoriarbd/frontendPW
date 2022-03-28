@@ -5,7 +5,7 @@ module.exports = defineConfig({
 /*
 module.exports = {
   devServer: {
-      proxy: 'http://localhost:3300'
+      proxy: 'https://bookstore-depository-2.herokuapp.com'
   } }
 
 */

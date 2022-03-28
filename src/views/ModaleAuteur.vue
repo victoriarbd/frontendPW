@@ -59,7 +59,7 @@ export default {
               });
           var config = {
                 method: 'put',
-                url: 'http://localhost:3300/auteur/'+this.idauteur,
+                url: 'https://bookstore-depository-2.herokuapp.com/auteur/'+this.idauteur,
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'

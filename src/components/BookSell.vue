@@ -99,7 +99,7 @@ export default {
   /*
   mounted () {
     axios
-      .get('http://localhost:3300/categorie')
+      .get('https://bookstore-depository-2.herokuapp.com/categorie')
       .then(response => (this.categories = response.data))
       .catch(error => {
         console.log(error)
@@ -107,7 +107,7 @@ export default {
       })
       .finally(() => this.loading = false),
       axios
-      .get('http://localhost:3300/genre')
+      .get('https://bookstore-depository-2.herokuapp.com/genre')
       .then(response => (this.genres = response.data))
       .catch(error => {
         console.log(error)
@@ -175,7 +175,7 @@ export default {
         });
         var config = {
                 method: 'post',
-                url: 'http://localhost:3300/livre',
+                url: 'https://bookstore-depository-2.herokuapp.com/livre',
                 headers: {
                   'Authorization': `Bearer ${this.user.token}`,
                   'Content-Type': 'application/json'
