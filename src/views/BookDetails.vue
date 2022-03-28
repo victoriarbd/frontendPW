@@ -26,13 +26,14 @@
           <li class="list-group-item">état : "{{ livre.etat }}"</li>
         </ul>
         <div class="card-body">
-          <button class="btn btn-primary" v-on:click="afficherEmailUser()">
-            adresse mail du vendeur
+          <a :href="'mailto:' + this.userBook.email">
+            <button class="btn btn-primary" >
+            Contacter le vendeur par mail
           </button>
+          </a>
+         
           <br />
-          <h6 class="card-subtitle mb-2 text-muted">
-            {{ this.userBook.email }}
-          </h6>
+          
           <button
             v-if="user.iduser == livre.iduser"
             @click="$router.push('/updateBook/' + livre.idlivre)"
@@ -69,7 +70,7 @@ export default {
     };
   },
 
-  mounted: function () {
+  beforeMount: function () {
     console.log(this.idcategorie);
     console.log("test this", this);
     this.user = JSON.parse(localStorage.getItem("user"));
@@ -79,15 +80,30 @@ export default {
     EventService.getBookById(this.idlivre)
       .then((response) => {
         this.livre = response.data;
+        EventService.getUserById(this.livre.iduser).then((response) => {
+          this.userBook = response.data;
+          //console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
         //console.log("livre", response.data);
       })
       .catch((error) => {
         console.log(error);
       });
+  
 
     // this.livre = await EventService.getBookById(this.idlivre).data[[0]],
     // console.log(this.livre.nom)
     // console.log("ihihiohihiuhioh")
+  },
+
+  mounted() {
+    console.log('oui');
+    console.log(this.livre.iduser);
+    
+      console.log(this.userBook);
   },
   created() {
     console.log(this.idcategorie);

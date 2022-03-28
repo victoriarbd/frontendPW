@@ -5,6 +5,7 @@
     <MesAnnonces v-for="livre in livres" :key="livre.id" :livre="livre"/>
   </div>
     </div>
+    
 </template>
 
 <script>
@@ -36,6 +37,7 @@ export default {
       if (!localStorage.getItem('user')){
         this.$router.push('/login')
       }
+      
 
   },
   /*

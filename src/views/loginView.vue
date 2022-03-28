@@ -18,7 +18,7 @@
                   <input
                     v-model="email"
                     type="email"
-                    id="typeEmailX"
+                    
                     class="form-control form-control-lg"
                     placeholder="Adresse mail"
                   />
@@ -29,7 +29,7 @@
                 >
                   <div class="form-outline form-white mb-4">
                   <input
-                    v-model="email"
+                    v-model="nom"
                     type="text"
                     class="form-control form-control-lg"
                     placeholder="Nom"
@@ -38,7 +38,7 @@
                   
                  <div class="form-outline form-white mb-4">
                   <input
-                    v-model="email"
+                    v-model="prenom"
                     type="text"
                     class="form-control form-control-lg"
                     placeholder="Prénom"
@@ -106,6 +106,7 @@
 
 <script>
 import axios from 'axios';
+import SHA256 from '../security/save'
 export default {
   name: "LoginView",
   data: function () {
@@ -152,7 +153,7 @@ export default {
 
           var data = JSON.stringify({
       email: this.email,
-      password: this.password,
+      password: SHA256(this.password),
     });
 
     var config = {
@@ -183,9 +184,9 @@ export default {
       nom : this.nom,
       prenom : this.prenom,
       email : this.email,
-      password : this.password,
+      password : SHA256(this.password),
       isAdmin : this.isAdmin
-      });
+      }); 
 
       var config = {
         method: 'post',
