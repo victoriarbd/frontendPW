@@ -79,7 +79,7 @@
           :key="auteur.id"
           :value="auteur.idauteur"
         >
-          {{ auteur.nom }}
+          {{auteur.prenom}} {{ auteur.nom }}
         </option>
       </select>
     </div>

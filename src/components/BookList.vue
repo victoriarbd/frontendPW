@@ -10,7 +10,7 @@
               
               Prix : {{livre.prix}} €
               
-              <br> {{livre.ville}} 
+              <br> Postée à : <strong>{{livre.ville}}</strong>
               <br>
               <strong>{{livre.nom}}</strong>
                </p>
