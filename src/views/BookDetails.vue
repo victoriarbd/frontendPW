@@ -26,7 +26,7 @@
           <li class="list-group-item">état : "{{ livre.etat }}"</li>
         </ul>
         <div class="card-body">
-          <a :href="'mailto:' + this.userBook.email">
+          <a :href="'mailto:' + this.userBook.email" v-if="user.iduser != livre.iduser">
             <button class="btn btn-primary" >
             Contacter le vendeur par mail
           </button>
