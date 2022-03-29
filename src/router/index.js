@@ -8,6 +8,7 @@ import AuteursView from '../views/AuteursView.vue'
 import GenreView from '../views/GenreView.vue'
 import MesAnnoncesView from '../views/MesAnnoncesView.vue'
 import UpdateBook from '../components/UpdateBook.vue'
+import MonCompteView from '../views/MonCompteView.vue'
 
 const routes = [
   {
@@ -56,6 +57,12 @@ const routes = [
     name: 'updateBook',
     component: UpdateBook
   },
+  {
+    path: '/moncompte',
+    name: 'moncompte',
+    component: MonCompteView
+  }
+  
   
   
 
