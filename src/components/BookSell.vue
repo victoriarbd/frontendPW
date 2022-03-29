@@ -11,7 +11,7 @@
   <div class="form-group">
     <label for="exampleFormControlInput1">Prix</label>
     <input type="number" class="form-control" id="exampleFormControlInput1"
-       min="0" step="0.01" v-model ="formLivre.prix">
+       min="0" step="0.5" v-model ="formLivre.prix">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Image (url)</label>

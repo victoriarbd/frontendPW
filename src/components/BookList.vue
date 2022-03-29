@@ -1,15 +1,19 @@
 <template>
       <div class="card" style="max-width: 18rem;">
         <router-link class="event-link" :to="{ name: 'BookDetails', params: {idlivre: livre.idlivre, idcategorie:livre.idcategorie, idgenre:livre.idgenre, idauteur:livre.idauteur}}">
-        <img v-bind:src="livre.image" class="card-img-top embed-responsive-item">
+        <img v-bind:src="livre.image" class="card-img-top embed-responsive-item imgPareil">
         <div class="card-body">
           
             
-            <p class="card-text">{{livre.nom}}
+            <p class="card-text">
               <br>
+              
               Prix : {{livre.prix}} €
+              
+              <br> {{livre.ville}} 
               <br>
-              Postée à {{livre.ville}} </p>
+              <strong>{{livre.nom}}</strong>
+               </p>
             
             
 
@@ -145,4 +149,6 @@ img{
   object-fit: cover;
 
 }
+
+
 </style>

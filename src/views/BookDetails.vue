@@ -7,7 +7,7 @@
 
       <div class="card h-25 " style="width: 18rem">
         <div class="card-body">
-          <h5 class="card-title">{{ livre.nom }}</h5>
+          <h5 class="card-title"><strong>{{ livre.nom }}</strong></h5>
           <h6 class="card-text">prix : {{ livre.prix }} €</h6>
           <br />
           <p class="card-text">
@@ -16,12 +16,12 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
-            Ville où est postée l'annonce : {{ livre.ville }}
+            Ville où est postée l'annonce : <strong>{{ livre.ville }}</strong>
           </li>
-          <li class="list-group-item">Catégorie : {{ this.categorie.nom }}</li>
-          <li class="list-group-item">Genre : {{ this.genre.nom }}</li>
+          <li class="list-group-item">Catégorie : <strong>{{ this.categorie.nom }}</strong></li>
+          <li class="list-group-item">Genre : <strong>{{ this.genre.nom }}</strong></li>
           <li class="list-group-item">
-            écrit par : {{ this.auteur.prenom }} {{ this.auteur.nom }}
+            écrit par : <strong>{{ this.auteur.prenom }} {{ this.auteur.nom }} </strong>
           </li>
           <li class="list-group-item">état : "{{ livre.etat }}"</li>
         </ul>
