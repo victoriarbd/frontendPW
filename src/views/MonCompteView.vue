@@ -1,8 +1,27 @@
 <template>
   <h2>Mon compte</h2>
+  <div class="container">
+   <div class="form-check form-switch" id="checklabel">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    v-model="update"
+                    id="flexSwitchCheckDefault"
+                    @click="modifierProfil"
+                  />
+                  <label class="form-check-label" for="flexSwitchCheckDefault" v-if="!update">
+                    Modifier mon profil</label
+                  >
+                  <label class="form-check-label" for="flexSwitchCheckDefault" v-if="update">
+                    Visualiser mon profil</label
+                  >
+                </div>
+  </div>
+
   <div class="container-fluid">
     <div class="row row-cols-5 row-cols-lg-5 g-2 g-lg-2">
-        <div class="card mb-3" v-if="!this.modifier">
+        <div class="card mb-3" v-if="!this.update">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
@@ -32,28 +51,12 @@
             </div>
 
             <hr />
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    v-model="update"
-                    id="flexSwitchCheckDefault"
-                    @click="modifierProfil"
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckDefault">
-                    Modifier votre profil</label
-                  >
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
       
       
-        <div class="card" v-if="this.modifier">
+        <div class="card" v-if="this.update">
           <div class="card-body">
             <div class="row mb-3">
               <div class="col-sm-3">
@@ -123,19 +126,6 @@
                 >
                 Sauvegarder 
                 </button>
-                <div class="form-check form-switch">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    v-model="update"
-                    id="flexSwitchCheckDefault"
-                    @click="visualiserProfil"
-                  />
-                  <label class="form-check-label" for="flexSwitchCheckDefault">
-                    Visualiser votre profil</label
-                  >
-                </div>
               </div>
             </div>
           </div>
@@ -153,7 +143,7 @@ export default {
   name: 'MonCompteView',
   data(){
     return {
-       modifier :false,
+       update: false,
        user: {},
        oneUser : null,
        password: '',
@@ -191,10 +181,11 @@ export default {
   },
   methods:{
     modifierProfil(){
-      this.modifier = true
-    },
-    visualiserProfil(){
-      this.modifier = false
+        if (!this.update){
+            this.update = true
+        }else{
+            this.update = false
+        }
     },
     async updateFormUser(){
         if (this.password == this.confirmPassword){
@@ -253,5 +244,11 @@ export default {
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%),
     0 2px 6px 0 rgb(206 206 238 / 54%);
+}
+
+#checklabel{
+    margin:0 auto; /* centrage horizontal */
+	width:220px;
+    margin-top: 40px;
 }
 </style>
