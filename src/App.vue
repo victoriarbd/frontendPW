@@ -41,15 +41,21 @@
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" v-if="user">
-                     <router-link to="/mesannonces" style="text-decoration: none">Mes annonces</router-link>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" v-if="user">
-                     <router-link to="/moncompte" style="text-decoration: none">Mon compte</router-link>
-                    </a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mon compte
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">
+                      <router-link to="/moncompte" style="text-decoration: none">Mon profil</router-link>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <router-link to="/mesannonces" style="text-decoration: none">Mes annonces</router-link>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="nav-item" v-if="!user">
                     <a class="nav-link" href="#">

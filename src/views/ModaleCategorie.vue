@@ -4,7 +4,7 @@
 
     <div class="modale card">
       <div v-on:click="toggleModale" class="btn-modale btn btn-danger">X</div>
-      <h4>Modification du genre</h4>
+      <h4>Modification de la catégorie</h4>
       <form>
             <div class="form-group">
                 
