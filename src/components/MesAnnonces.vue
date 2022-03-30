@@ -39,9 +39,6 @@ export default {
     if(this.user == null){
        this.$router.push('/login')
     }
-    // this.livre = await EventService.getBookById(this.idlivre).data[[0]],
-    // console.log(this.livre.nom)
-    // console.log("ihihiohihiuhioh")
   },
   created(){
     EventService.getAllAuteur()

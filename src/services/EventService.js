@@ -53,7 +53,6 @@ const apiClient = axios.create({
         return apiClient.post('/auteur', formAuteur)
     },
     postLivre(formLivre){
-        console.log("ooooooo")
         return apiClient.post('/livre', formLivre)
     },
     //requetes delete by something
@@ -71,22 +70,15 @@ const apiClient = axios.create({
     },
     //requete put by something
     updateCategorie(id,nom){
-        console.log(nom)
         return apiClient.put('/api/categorie/'+ id, nom)
     },
     updateGenre(id, nom){
-        console.log("iddddd", id)
-        console.log("nommmmmm", nom)
         return apiClient.put('/genre/'+ id, nom)
     },
     updateAuteur(id, nom, prenom){
-        console.log("iddddd", id)
-        console.log("nommmmmm", nom)
         return apiClient.put('/auteur/'+ id, nom, prenom)
     },
     updateLivre(id, nom, description, image, prix, etat, ville, idcategorie, idgenre, idauteur, iduser){
-        console.log("iddddd", id)
-        console.log("nomm", nom)
         return apiClient.put('/livre/'+ id, nom, description, image, prix, etat, ville, idcategorie, idgenre, idauteur, iduser)
     }
     

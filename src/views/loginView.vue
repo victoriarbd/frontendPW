@@ -117,7 +117,6 @@ export default {
       nom: "",
       password: "",
       isAdmin : 0,
-      //erreur : ''
     };
   },
   mounted: function () {

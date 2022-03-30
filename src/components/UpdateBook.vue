@@ -112,18 +112,10 @@
 </template>
 
 <script>
-//import axios from 'axios'
 import EventService from '@/services/EventService.js'
 import axios from 'axios'
 export default {
   name: 'UpdateBook',
-  /*
-  props: {
-    categorie: {
-      type: Object,
-      required: true
-    }
-  },*/
   data(){
     return {
       user : {},
@@ -147,7 +139,6 @@ export default {
       genres : null,
       loading: true,
       errored: false
-      //categories : [{}]
     }
   },
   async mounted() {
@@ -158,8 +149,6 @@ export default {
        this.$router.push('/login')
     }
     const result = await axios.get('https://bookstore-depository-2.herokuapp.com/livre/'+this.$route.params.id)
-    //console.warn(this.$route.params.id)
-    //console.warn(result.data)
     this.formLivre=result.data
   },
     created(){
@@ -167,7 +156,6 @@ export default {
       .then(response => {
         this.livre = response.data
         this.formLivre.iduser = this.livre.iduser
-        //console.log(this.formLivre.iduser)
       })
       .catch(error => {
         console.log(error)
@@ -227,51 +215,8 @@ export default {
               } else {
               alert("Impossible de modifier l'annonce.")
               }
-            /*
-              axios(config)
-              .then(function (response) {
-                console.log(JSON.stringify(response.data))
-                alert("Modification(s) bien effectuée(s)!")
-              })
-              .catch(function (error) {
-                alert("Impossible de modifier l'annonce.")
-                console.log(error);
-              })
-              */
             }
           }
-            /*
-            async updateFormLivre(){
-              //const config = {
-                //headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                 //'Content-Type': 'application/json'
-                          //}
-            //};
-            //console.log("nom",this.formLivre.nom)
-            //console.log('id', this.$route.params.id)
-            if(confirm("Do you really want to update?")){
-            const result = await axios.put("https://bookstore-depository-2.herokuapp.com/livre/"+this.$route.params.id,
-             headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`, 'Content-Type': 'application/json'},
-             {
-              nom: this.formLivre.nom,
-              description : this.formLivre.description,
-              image : this.formLivre.image,
-              prix : this.formLivre.prix,
-              etat : this.formLivre.etat,
-              ville : this.formLivre.ville,
-              idcategorie : this.formLivre.idcategorie,
-              idgenre : this.formLivre.idgenre,
-              idauteur : this.formLivre.idauteur,
-              iduser : this.user.iduser,
-            });
-            if (result.status == 200){
-                this.$router.push('/')
-            } else {
-              alert("Impossible de modifier l'annonce.")
-            }
-
-            }
-      },*/
 
 
       },
@@ -283,7 +228,7 @@ export default {
 
 <style scoped>
 .form-group {
-  margin: auto; /* Added */
+  margin: auto; 
   width: 500px;
 }
 form {

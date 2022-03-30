@@ -82,21 +82,14 @@ export default {
         this.livre = response.data;
         EventService.getUserById(this.livre.iduser).then((response) => {
           this.userBook = response.data;
-          //console.log(response.data);
         })
         .catch((error) => {
           console.log(error);
         });
-        //console.log("livre", response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  
-
-    // this.livre = await EventService.getBookById(this.idlivre).data[[0]],
-    // console.log(this.livre.nom)
-    // console.log("ihihiohihiuhioh")
   },
 
   mounted() {
@@ -132,21 +125,7 @@ export default {
       });
   },
 
-  //peut etre a modifier car on recupere un tableau de tableau
-
   methods: {
-    /*
-    getLivre() {
-      EventService.getBookById(this.idlivre)
-        .then((response) => {
-          this.livre = response.data;
-          console.log("livre", response.data);
-          this.getCategorie();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },*/
     getCategorie() {
       EventService.getCategorieById(this.idcategorie)
         .then((response) => {
@@ -195,7 +174,6 @@ export default {
       EventService.getUserById(this.livre.iduser)
         .then((response) => {
           this.userBook = response.data;
-          //console.log(response.data);
         })
         .catch((error) => {
           console.log(error);

@@ -49,7 +49,6 @@ export default {
   data() {
     return {
       auteurBook : {},
-      //test: '',
       categorieBook: {},
       genreBook: {},
       
@@ -83,37 +82,6 @@ export default {
           console.log(error);
         })
   },
-  methods:{
-    getSomething(){
-      
-      this.test = "coucou"
-    },
-    /*
-    afficherCategorie(){
-      EventService.getCategorieById(this.idcategorie)
-        .then((response) => {
-          this.categorieBook = response.data;
-          console.log(response.data);
-          console.log("test", this.categorieBook);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    },*/
-    afficherGenre(){
-      
-    },
-    afficherAuteur(){
-      EventService.getAuteurById(this.livre.idauteur)
-        .then((response) => {
-          this.auteurBook = response.data;
-          //console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    }
-  }
 }
 </script>
 

@@ -53,18 +53,10 @@
 
 
 <script>
-//import axios from 'axios'
 import EventService from '@/services/EventService.js'
 import axios from 'axios'
 export default {
   name: 'BookSell',
-  /*
-  props: {
-    categorie: {
-      type: Object,
-      required: true
-    }
-  },*/
   data(){
     return {
       user : {},
@@ -84,9 +76,6 @@ export default {
       genre:'',
       categories: null,
       genres : null,
-      //loading: true,
-      //errored: false
-      //categories : [{}]
     }
   },
   mounted: function () {
@@ -96,26 +85,6 @@ export default {
        this.$router.push('/login')
     }
   },
-  /*
-  mounted () {
-    axios
-      .get('https://bookstore-depository-2.herokuapp.com/categorie')
-      .then(response => (this.categories = response.data))
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false),
-      axios
-      .get('https://bookstore-depository-2.herokuapp.com/genre')
-      .then(response => (this.genres = response.data))
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
-  }
-  */
   
     created(){
       EventService.getAllCategorie()
@@ -218,7 +187,7 @@ export default {
 <style scoped>
 
 .form-group {
-    margin: auto; /* Added */
+    margin: auto; 
     width: 500px;
     
     

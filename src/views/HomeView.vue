@@ -49,14 +49,12 @@
 
 <script>
 // @ is an alias to /src
-//import HelloWorld from '@/components/HelloWorld.vue'
 import BookList from '@/components/BookList.vue'
 import axios from 'axios'
 import EventService from '@/services/EventService.js'
 export default {
   name: 'HomeView',
   components: {
-    //HelloWorld,
     BookList
   },
   data(){
@@ -101,33 +99,9 @@ export default {
       .catch(error => {
         console.log(error)
       })
-      /*
-      EventService.getLivreByIdCategorie()
-      .then(response => {
-        this.livreCat = response.data
-      })
-      .catch(error => {
-        console.log(error)
-      })
-      */
       
   },
-  /*
-  mounted: function () {
-      if (!localStorage.getItem('user')){
-        this.$router.push('/login')
-      }
-
-  },*/
   computed: {
-    /*
-    filteredBooks: function(){
-      
-      return this.livres.filter((livre) => {
-        console.log(this.livreCat)
-        return livre.nom.toLowerCase().match(this.search.toLowerCase()) || livre.ville.toLowerCase().match(this.search.toLowerCase()) || this.livreCat
-      }) 
-    }*/
     filteredBooks: function(){
         if (this.search != ''){
           return this.livres.filter(livre => {
@@ -180,18 +154,6 @@ export default {
     }
 
   }
-  /*
-  mounted () {
-    axios
-      .get('https://bookstore-depository-2.herokuapp.com/livre')
-      .then(response => (this.livres = response.data))
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
-  }
-  */
 
 }
 </script>
@@ -199,9 +161,7 @@ export default {
 
 <style scooped>
 .card {
-    margin: 0 auto; /* Added */
-    
-    
+    margin: 0 auto; 
     margin-top: 50px;
     padding: 10px; 
     width: auto;

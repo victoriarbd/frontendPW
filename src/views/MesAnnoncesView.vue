@@ -11,7 +11,6 @@
 <script>
 // @ is an alias to /src
 import MesAnnonces from '@/components/MesAnnonces.vue'
-//import axios from 'axios'
 import EventService from '@/services/EventService.js'
 export default {
   name: 'MesAnnoncesView',
@@ -40,18 +39,6 @@ export default {
       
 
   },
-  /*
-  mounted () {
-    axios
-      .get('https://bookstore-depository-2.herokuapp.com/livre')
-      .then(response => (this.livres = response.data))
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
-  }
-  */
 
 }
 </script>

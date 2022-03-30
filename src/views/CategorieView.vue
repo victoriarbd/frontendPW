@@ -48,15 +48,6 @@
 import EventService from '@/services/EventService.js'
 import ModaleCategorie from '@/views/ModaleCategorie.vue'
 import axios from 'axios'
-/*
-const header = {
-    "Access-Control-Allow-Origin": "*"
-  }
-
- axios.post(URL, headers:header
-    })
-
-*/
 export default {
   name: 'CategorieView',
   components: {

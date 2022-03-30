@@ -6,8 +6,6 @@
 
 <script>
 import BookSell from '@/components/BookSell.vue'
-//import axios from 'axios'
-//import EventService from '@/services/EventService.js'
 
 export default {
   name: 'BookSellView',
@@ -21,49 +19,8 @@ export default {
       errored: false
       //categories : [{}]
     }
-  },
-  //methods {
-    //getAllCategorie = function(){
-
-    //}
-    /*
-    beforeMount(){
-      EventService.axios.get('http://localhost:8080/categorie')
-      .then(res => {
-        if(res.err){
-          console.log('no match')
-        }
-        else{
-          this.categorie = res.data
-        }
-      })
-      .catch(err => console.log(err))
-    }
-    */
-   /*
-   mounted () {
-    axios
-      .get('https://bookstore-depository-2.herokuapp.com/categorie')
-      .then(response => (this.categories = response.data))
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
   }
-  */
-  /*
-    created(){
-      EventService.getCategories()
-      .then(response => {
-        this.categories = response.data
-      })
-      .catch(error => {
-        console.log(error)
-      })
-    }
-    */
-  }
+}
 
 </script>
 

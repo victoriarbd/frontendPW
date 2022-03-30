@@ -18,7 +18,6 @@
 </template>
 
 <script>
-//import EventService from '@/services/EventService.js'
 import axios from 'axios'
 export default {
 
@@ -26,13 +25,9 @@ export default {
     props: ["revele", "toggleModale", "idauteur","nomAuteur","prenomAuteur"],
     data(){
         return {
-            //newnom: '',
-            //newprenom : '',
-            
             newnom : '',
             newprenom : '',
-            user : {}
-            
+            user : {}  
         }
         
     },
@@ -75,21 +70,6 @@ export default {
             })
         }
       },
-      /*
-      updateFormAuteur(){
-        if(confirm("Voulez-vous vraiment modifier ? Cela affectera les annonces publiées.")){
-          EventService.updateAuteur(this.idauteur,  {
-              nom:this.newnom,
-              prenom:this.newprenom
-          })
-          .then(function (response) {
-              console.log('Response', response)
-          })
-          .catch(function (err) {
-            console.log('Erreur', err);
-          })
-        }
-      },*/
     }
 }
 </script>
